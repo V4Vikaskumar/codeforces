@@ -1,10 +1,10 @@
 import { PrismaClient } from "@prisma/client";
-import { addquestionSchema } from "../schema/Auth.schema";
-import { addQuestion } from "../services/Mentainer.Question";
+import { addquestionSchema } from "../schema/Auth.schema.js";
+import { addQuestion } from "../services/Mainterners.Question.js";
 
 let prisma = new PrismaClient();
 
-export default async function addquestion(req,res,next){
+export async function addquestion(req,res,next){
     try {
         let check = addquestionSchema.safeParse(req.body);
         if(!check.success){
@@ -23,4 +23,3 @@ export default async function addquestion(req,res,next){
     }
 }
 
-    

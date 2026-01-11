@@ -1,7 +1,7 @@
 import express from 'express';
 import { createServer } from "http";
 import AuthRouter from "./http/routers/auth.js";
-import Mentainer from './http/routers/mentainers.js'
+import Maintainer from './http/routers/mainterners.js'
 import cors from 'cors';
 import { Server } from "socket.io";
 // import dotenv from 'dotenv';
@@ -23,7 +23,7 @@ app.use(cors({
 
 // send requests to routers
 app.use('/api/auth',AuthRouter);
-app.use('/api/mentainers',Mentainer);
+app.use('/api/maintainers',Maintainer);
 
 httpServer.listen(PORT,()=>{
     console.log('http://localhost:'+ PORT);
